@@ -1,7 +1,8 @@
 import reflex as rx
 
+
 class LightGalleryComponent(rx.Component):
-    library = '/public/lightgallery'
+    library = "/public/lightgallery"
     tag = "LightGalleryComponent"
     is_default = False
 

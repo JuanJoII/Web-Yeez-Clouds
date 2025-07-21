@@ -1,5 +1,6 @@
 import reflex as rx
-from ..Components import navbar, index_images_comp, footer
+from ..Components import navbar, index_images_comp, index_collection_show, footer
+
 
 @rx.page(route="/", title="Yeez Clouds | Index")
 def pagina_principal() -> rx.Component:
@@ -8,7 +9,7 @@ def pagina_principal() -> rx.Component:
         rx.vstack(
             [
                 index_images_comp.index_comp(),
-                rx.text("Explore our collection of Yeez Clouds images.", class_name="text-center text-lg my-4"),
+                index_collection_show.collection_show(),
             ],
             class_name="w-full",
         ),

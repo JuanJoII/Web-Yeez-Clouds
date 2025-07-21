@@ -1,40 +1,46 @@
 import reflex as rx
 
+
 def navbar_links(text: str, href: str) -> rx.Component:
     return rx.link(
         rx.text(text),
         href=href,
-        class_name="text-decoration-none text-white hover:text-blue-500 transition-colors duration-300",
+        class_name="text-decoration-none text-white hover:text-blue-500 transition-colors duration-300 text-xl",
     )
 
+
 def navbar() -> rx.Component:
-    
     return rx.box(
         rx.desktop_only(
             rx.hstack(
+                rx.spacer(),
                 rx.hstack(
-                    rx.link(
-                        rx.image(src='/Logo_temp.png', width='50px', height='auto'),
-                        href='/',
-                    ),
-                    rx.heading(
-                        'Yeez Clouds',
-                    ),
-                    align_items='center',
+                    navbar_links("Home", "/"),
+                    rx.spacer(),
+                    navbar_links("About", "/about"),
+                    spacing="9",
+                    align_items="center",
+                    justify="center",
+                ),
+                rx.spacer(),
+                rx.link(
+                    rx.image(
+                        src="/yz_logo.png",
+                        class_name="w-32 h-auto object-contain",
+                    )
                 ),
                 rx.spacer(),
                 rx.hstack(
-                    navbar_links('Home', '/'),
-                    navbar_links('About', '/about'),
-                    navbar_links('Contact', '/contact'),
-                    navbar_links('Blog', '/blog'),
-                    spacing = '5',
-                    align_items = 'center',
-                    justify='center',
+                    navbar_links("Store", "/store"),
+                    navbar_links("Contact", "/contact"),
+                    spacing="9",
+                    align_items="center",
+                    justify="center",
                 ),
-                justify='between',
-                align_items = 'center',
-                class_name="bg-transparent backdrop-blur-sm p-4 shadow-md sticky top-0",
+                rx.spacer(),
+                justify="between",
+                align_items="center",
+                class_name="bg-transparent backdrop-blur-lg px-1 py-2 fixed top-0 left-0 right-0 z-50 rounded-b-lg",
             )
         )
     )
