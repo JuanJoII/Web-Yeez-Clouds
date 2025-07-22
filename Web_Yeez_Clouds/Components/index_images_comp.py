@@ -20,5 +20,5 @@ def index_comp() -> rx.Component:
             ),
             spacing="0",
         ),
-        class_name="w-full h-screen hola",
+        class_name="w-full h-screen",
     )

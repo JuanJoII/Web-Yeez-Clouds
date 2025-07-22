@@ -3,9 +3,9 @@ import reflex as rx
 
 def navbar_links(text: str, href: str) -> rx.Component:
     return rx.link(
-        rx.text(text),
+        rx.text(text, class_name="text-2xl font-semibold"),
         href=href,
-        class_name="text-decoration-none text-white hover:text-blue-500 transition-colors duration-300 text-xl",
+        class_name="text-decoration-none text-white hover:text-blue-500 transition-colors duration-300",
     )
 
 
@@ -27,7 +27,8 @@ def navbar() -> rx.Component:
                     rx.image(
                         src="/yz_logo.png",
                         class_name="w-32 h-auto object-contain",
-                    )
+                    ),
+                    href="/",
                 ),
                 rx.spacer(),
                 rx.hstack(
